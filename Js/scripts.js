@@ -151,3 +151,15 @@ const pokemonList = [
 	['Mewtwo', { height: 2.0, weight: 122.0, type: ['Psychic'] }],
 	['Mew', { height: 0.4, weight: 4.0, type: ['Psychic'] }],
 ];
+for (let i = 0; i < pokemonList.length; i++) {
+	let pokemon = pokemonList[i];
+	let name = pokemon[0];
+	let details = pokemon[1];
+
+	document.write(`Name: ${name}`);
+	document.write(` Height: ${details.height} meters`);
+	if (details.height > 8) document.write(" - Wow, that's Big!");
+	document.write(` Weight: ${details.weight} kg`);
+	document.write(` Type(s): ${details.type.join(', ')}`);
+	document.write('----------------------');
+}
