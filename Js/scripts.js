@@ -152,28 +152,64 @@ let pokemonRepository = (function () {
 		['Mewtwo', { height: 2.0, weight: 122.0, type: ['Psychic'] }],
 		['Mew', { height: 0.4, weight: 4.0, type: ['Psychic'] }],
 	];
+	//pokemonRepository.getAll().forEach(function (pokemon) {
+	//let name = pokemon[0];
+	//let details = pokemon[1];
+
+	//document.write(`Name: ${name}`);
+	//document.write(` Height: ${details.height} meters`);
+	//if (details.height > 8) document.write(" - Wow, that's Big!");
+	//document.write(` Weight: ${details.weight} kg`);
+	//document.write(` Type(s): ${details.type.join(', ')}`);
+	//document.write('----------------------');
+	//})
 
 	function getAll() {
 		return pokemonList;
 	}
 
 	function add(pokemon) {
-		pokemonList.push(pokemon);
+		{
+			pokemonList.push(pokemon);
+		}
 	}
 
+	function addListItem(pokemon) {
+		let pokemonList = document.querySelector('.pokemon-list');
+		let listpokemon = document.createElement('li');
+		let button = document.createElement('button');
+		button.innerText = pokemon[0];
+		button.classList.add('button-class');
+		button.addEventListener('click', function () {
+			showDetails(pokemon);
+		});
+		listpokemon.appendChild(button);
+		pokemonList.appendChild(listpokemon);
+	}
+
+	function showDetails(pokemon) {
+		let name = pokemon[0];
+		let details = pokemon[1];
+		console.log(`Name: ${name}`);
+		console.log(`Height: ${details.height} meters`);
+		console.log(`Weight: ${details.weight} kg`);
+		console.log(`Type(s): ${details.type.join(', ')}`);
+		if (details.height > 8) {
+			console.log("Wow, that's big!");
+		}
+	}
+
+	//getAll().forEach(function (pokemon) {
+	//addListItem(pokemon);
+	//});
+
 	return {
-		getAll: getAll,
 		add: add,
+		getAll: getAll,
+		showDetails: showDetails,
+		addListItem: addListItem,
 	};
 })();
 pokemonRepository.getAll().forEach(function (pokemon) {
-	let name = pokemon[0];
-	let details = pokemon[1];
-
-	document.write(`Name: ${name}`);
-	document.write(` Height: ${details.height} meters`);
-	if (details.height > 8) document.write(" - Wow, that's Big!");
-	document.write(` Weight: ${details.weight} kg`);
-	document.write(` Type(s): ${details.type.join(', ')}`);
-	document.write('----------------------');
+	pokemonRepository.addListItem(pokemon);
 });
