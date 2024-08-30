@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
 	let pokemonList = [];
-	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
 	function getAll() {
 		return pokemonList;
@@ -48,15 +48,36 @@ let pokemonRepository = (function () {
 	}
 
 	function showDetails(pokemon) {
-		// Load the details for the selected Pokémon
 		loadDetails(pokemon).then(function () {
-			console.log(`Name: ${pokemon.name}`);
-			console.log(`Height: ${pokemon.height} ft`);
-			console.log(`Weight: ${pokemon.weight} lb`);
-			console.log(`Type(s): ${pokemon.types.join(', ')}`);
-			if (pokemon.height > 8) {
-				console.log("Wow, that's big!");
-			}
+			let modal = document.getElementById('pokemon-modal');
+			let modalTitle = modal.querySelector('.modal-title');
+			let modalImage = modal.querySelector('.modal-image');
+			let modalHeight = modal.querySelector('.modal-height');
+			let modalWeight = modal.querySelector('.modal-weight'); // New selector for weight
+			let modalTypes = modal.querySelector('.modal-types');
+
+			// Set modal content with Pokémon details
+			modalTitle.innerText = pokemon.name;
+			modalImage.src = pokemon.imageUrl;
+			modalHeight.innerText = `Height: ${pokemon.height} ft`;
+			modalWeight.innerText = `Weight: ${pokemon.weight} lb`;
+			modalTypes.innerText = `Type(s): ${pokemon.types.join(', ')}`;
+
+			// Show the modal
+			modal.style.display = 'block';
+
+			// Close modal when close button is clicked
+			let closeButton = modal.querySelector('.close-button');
+			closeButton.onclick = function () {
+				modal.style.display = 'none';
+			};
+
+			// Close modal when clicking outside of the modal content
+			window.onclick = function (event) {
+				if (event.target === modal) {
+					modal.style.display = 'none';
+				}
+			};
 		});
 	}
 
@@ -83,7 +104,6 @@ let pokemonRepository = (function () {
 		showDetails: showDetails,
 	};
 })();
-
 // Load the list of Pokémon and display them
 pokemonRepository.loadList().then(function () {
 	pokemonRepository.getAll().forEach(function (pokemon) {
