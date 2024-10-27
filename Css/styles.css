@@ -1,49 +1,103 @@
-/* Custom Modal Styles */
-.modal-container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	display: none;
-	justify-content: center;
-	align-items: center;
-	z-index: 1050; /* Ensure modal is above other content */
+/* General Styles */
+body {
+	font-family: 'Press Start 2P', sans-serif;
+	background-color: #e0e8f0; /* Light Diamond-inspired blue */
+	color: #2a2f4f; /* Deep blue for contrast */
 }
 
-.modal-container.is-visible {
-	display: flex;
+/* Navbar Styles */
+.navbar {
+	background-color: #4682b4; /* Diamond blue */
+	border-bottom: 4px solid #1e3a5f; /* Darker blue for depth */
 }
 
-.modal {
-	background: white;
-	padding: 20px;
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #f0f8ff; /* Light silver */
+}
+
+.nav-link {
+	color: #f0f8ff;
+}
+
+.nav-link:hover {
+	color: #b0c4de; /* Softened blue */
+}
+
+/* Pokemon List Styles */
+.pokemon-list {
+	background-color: #ffffff;
+	border: 2px solid #4682b4;
 	border-radius: 10px;
-	text-align: center;
-	position: relative;
-	top: 10%; /* Make the modal pop out from the top */
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.modal-close {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-size: 1.5em;
+.list-group-item {
+	background-color: #b0c4de; /* Soft, cloudy blue */
+	color: #2a2f4f;
+	border: none;
+	margin-bottom: 5px;
+	border-radius: 5px;
 	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.list-group-item:hover {
+	background-color: #1e3a5f; /* Deep blue */
+	color: #b0c4de;
+}
+
+/* Modal Styles */
+.modal-content {
+	background-color: #4682b4;
+	border: 2px solid #1e3a5f;
+}
+
+.modal-title {
+	color: #f0f8ff;
 }
 
 .pokemon-image {
-	max-width: 100%;
-	height: auto;
+	max-width: 150px;
+	border: 3px solid #1e3a5f;
+	border-radius: 10%;
+	background-color: #ffffff;
+	padding: 5px;
 }
 
-/* Custom Button Colors */
-.btn-custom {
-	background-color: red;
-	color: white;
+.pokemon-height,
+.pokemon-weight,
+.pokemon-types {
+	font-size: 1.1rem;
+	color: #1e3a5f;
 }
 
-.btn-custom:hover {
-	background-color: darkred;
+/* Bootstrap Primary Button Override */
+.btn-primary {
+	background-color: #1e3a5f;
+	border-color: #4682b4;
+	color: #f0f8ff;
+	font-size: 1rem;
+}
+
+.btn-primary:hover {
+	background-color: #4682b4;
+	border-color: #1e3a5f;
+	color: #f0f8ff;
+}
+
+/* Secondary Button Override */
+.btn-secondary {
+	background-color: #2a2f4f;
+	border-color: #2a2f4f;
+	color: #b0c4de;
+	font-size: 1rem;
+}
+
+.btn-secondary:hover {
+	background-color: #b0c4de;
+	color: #2a2f4f;
+	border-color: #b0c4de;
 }
