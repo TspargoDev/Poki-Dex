@@ -6,8 +6,6 @@ let pokemonRepository = (function () {
 		return pokemonList;
 	}
 
-	l;
-
 	function add(pokemon) {
 		pokemonList.push(pokemon);
 	}
