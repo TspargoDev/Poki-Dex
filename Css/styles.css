@@ -9,25 +9,27 @@ body {
 .navbar {
 	background-color: #4682b4; /* Diamond blue */
 	border-bottom: 4px solid #1e3a5f; /* Darker blue for depth */
+	height: 80px;
 }
 
 .navbar-brand {
 	font-size: 1.5rem;
 	font-weight: bold;
-	color: #f0f8ff; /* Light silver */
+	color: #b8ddfd; /* Light silver */
 }
 
 .nav-link {
-	color: #f0f8ff;
+	color: #0073df;
+	font-size: 20px;
 }
 
 .nav-link:hover {
-	color: #b0c4de; /* Softened blue */
+	color: #2a72cf; /* Softened blue */
 }
 
 /* Pokemon List Styles */
 .pokemon-list {
-	background-color: #ffffff;
+	background-color: #bdeef1;
 	border: 2px solid #4682b4;
 	border-radius: 10px;
 	padding: 20px;
@@ -35,8 +37,8 @@ body {
 }
 
 .list-group-item {
-	background-color: #b0c4de; /* Soft, cloudy blue */
-	color: #2a2f4f;
+	background-color: #098bd4; /* Soft, cloudy blue */
+	color: #015ba7;
 	border: none;
 	margin-bottom: 5px;
 	border-radius: 5px;
@@ -46,13 +48,13 @@ body {
 
 .list-group-item:hover {
 	background-color: #1e3a5f; /* Deep blue */
-	color: #b0c4de;
+	color: #6f98ac;
 }
 
 /* Modal Styles */
 .modal-content {
-	background-color: #4682b4;
-	border: 2px solid #1e3a5f;
+	background-color: #80a0b9;
+	border: 4px solid #62bee2;
 }
 
 .modal-title {
@@ -60,10 +62,11 @@ body {
 }
 
 .pokemon-image {
-	max-width: 150px;
-	border: 3px solid #1e3a5f;
+	height: 200px;
+	max-width: 200px;
+	border: 3px solid #25acce;
 	border-radius: 10%;
-	background-color: #ffffff;
+	background-color: #a2cfc9d2;
 	padding: 5px;
 }
 
@@ -100,4 +103,13 @@ body {
 	background-color: #b0c4de;
 	color: #2a2f4f;
 	border-color: #b0c4de;
+}
+
+.logo {
+	height: 120px; /* Set height to fit in the navbar */
+	max-height: 100%; /* Prevents it from exceeding navbar height */
+	padding: 5px; /* Adds padding around the logo */
+	margin-right: 5px; /* Adds space to the right of the logo */
+	object-fit: contain; /* Maintains the image aspect ratio */
+	vertical-align: middle; /* Centers the logo vertically within its container */
 }
