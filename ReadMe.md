@@ -40,7 +40,7 @@ This project is a web application that allows users to view a list of Pokémon a
 
 ##
 
-<tab><tab>git clone https://github.com/yourusername/pokemon-list.git
+<tab>git clone https://github.com/yourusername/pokemon-list.git<tab>
 
 2. Open index.html in your web browser.
 
