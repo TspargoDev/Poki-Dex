@@ -12,19 +12,18 @@ body {
 	height: 80px;
 }
 
-.navbar-brand {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #b8ddfd; /* Light silver */
-}
-
 .nav-link {
-	color: #0073df;
-	font-size: 20px;
+	color: #005bb5;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 1px 1px #004080;
+	margin-left: auto;
+	transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-link:hover {
-	color: #2a72cf; /* Softened blue */
+	color: #0073df;
+	text-shadow: 2px 2px #003366;
 }
 
 /* Pokemon List Styles */
