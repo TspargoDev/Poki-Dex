@@ -35,11 +35,13 @@ This project is a web application that allows users to view a list of Pokémon a
 # How to Run the Project
 
 1. Clone the repository:
-   bash
-   Copy code
+   ```bash
+   git clone https://github.com/tspargodev/pokemon-list.git
+   ```
 
-[git clone https://github.com/tspargodev/pokemon-list.git]
+```
 
 2. Open index.html in your web browser.
 
 Feel free to customize any sections as necessary! If you have specific features or functionalities in your application that you want to highlight, you can add those as well. Let me know if you need any more help!
+```
